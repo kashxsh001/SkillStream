@@ -1,0 +1,69 @@
+1.What is SQL and what are its main components?
+Ans: Sql is a programming language that help to reterive and manipulate data residing in such database.
+     Main components of sql are:-
+     1.DML(data manipulation language)
+     2.DDL(data defining language)
+     3.DCL(data control language)
+
+2.What is the difference between a primary key and a foreign key in SQL?
+Ans: 1.A primary key assures the value in the specific column is unique whwreas foreign key is used to build a relationship between the two   table 
+     2. The table allows only one primary key while the table can allow more than one foreign key.
+     3. Primary key doesnot allow null values whereas foreign key allow multiple null values.
+
+3.Explain the different types of SQL joins.
+Ans: 1. Inner Join = It returns records that have matching value in both tables. 
+     2. Left Join = It returns all records from the left table and the matched record from the right table.
+     3. Right Join = It returns all the records from the right table and the matched records from the left table.
+     4. Full Join = It returns all records when there is a match in either left or right side.
+     5. Self Join = It returns all the records from the table itself.
+
+5.Explain the difference between the WHERE and HAVING clauses in SQL.
+Ans: 1. Where is used to filter the records from the table based on the specified condition whereas having is used to filter the records from the groups based on the specified condition.
+     2. Where is can be used by group by command whereas having cannot be used without group by command.
+     3. Where is implement is row operations whereas having is implement in column operations.
+
+6.What is normalization in SQL and why is it important?
+Ans: Normalization is the process of reducinf reductancy in data in the table and also organizing the data. 
+     With the help of normalization we can organize the data and reduce the repetition of data.
+
+7.Explain the difference between the CHAR and VARCHAR data types in SQL.
+Ans: 1. Char is used to store strings of fixed size whereas varchar is used to store strings of variable size.
+     2. Char uses a fixed amount of storage based on the size of column whereas varchar use a variable amount of storage space based on the size of string stored.
+
+8.What is a trigger in SQL and how is it used?
+Ans: triggers are sql codes that automatically executed in response to certain events on aparticular table.
+         Syntax:-
+              create trigger trigger_name
+              On table_name
+              [FOR|after|INSTEAD OF] [INSERT|UPDATE|DELETE]
+              AS
+              trigger_body
+
+9.Explain the difference between the GROUP BY and ORDER BY clauses in SQL.
+Ans: 1. Group by clause is used in row that have same value whereas Order by sorts the result set order either in ascending or descending.
+     2. Grouping is dine is based on the similarly coming the row's attribute values whereas result-set is sorted based on the column's attribute values either ascending or descending.
+
+10.What is a view in SQL and how is it used?
+Ans: Aview is a virtual table based on the result set of an sql statement. A view contains rows and columns just like a real table.
+            Syntax:-
+                  create view view_name AS
+                  Select coulmn1,coulmn2,...
+                  from table_name
+                  where condition
+
+12.What is an index in SQL and how is it used?
+Ans: Indexes are used to retrieve data from the database more quickly than otherwise. The users cannot see the Indexes they are just used to speed up querries.
+                 Syntax:-
+                      create index index_name
+                      On table_name(column1,column2,...)
+
+13.Explain the difference between the UNION and UNION ALL operators in SQL.
+Ans: Union combines the result get from multiple tables and resturns the distinct code into a single result set whereas Union all combines the result set from multiple tables and return all records into a single result set.
+
+17.Explain the difference between the LIKE and IN operators in SQL.
+Ans: Like operator is used in where clause to search for a specified pattern in column wheras IN operator is used to specify multiple values in a Whwere clause. 
+
+19.Explain the difference between the COUNT and SUM functions in SQL.
+Ans: Count is used to count all the number of non-null values in a column whereas Sum  returns the count og all rows in the table.
+
+     
