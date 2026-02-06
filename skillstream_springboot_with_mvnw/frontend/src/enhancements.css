@@ -1,0 +1,260 @@
+/* Enhanced Profile Button */
+.profile-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, rgba(102,126,234,0.15), rgba(240,147,251,0.1));
+  border: 1px solid rgba(102,126,234,0.3);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--text);
+  position: relative;
+  overflow: hidden;
+}
+
+.profile-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(102,126,234,0.3), rgba(240,147,251,0.2));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.profile-btn:hover::before {
+  opacity: 1;
+}
+
+.profile-btn:hover {
+  background: linear-gradient(135deg, rgba(102,126,234,0.25), rgba(240,147,251,0.15));
+  border-color: rgba(102,126,234,0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102,126,234,0.3);
+}
+
+.profile-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 16px;
+  color: white;
+  box-shadow: 0 4px 12px rgba(102,126,234,0.4);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.profile-btn:hover .profile-avatar {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 6px 16px rgba(102,126,234,0.6);
+}
+
+.profile-name {
+  font-weight: 600;
+  font-size: 14px;
+  position: relative;
+  z-index: 1;
+}
+
+.profile-arrow {
+  font-size: 10px;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.profile-btn:hover .profile-arrow {
+  transform: translateY(3px);
+  opacity: 1;
+}
+
+/* Enhanced Profile Dropdown */
+.profile-dropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  min-width: 220px;
+  background: linear-gradient(135deg, rgba(26,26,46,0.98), rgba(15,15,35,0.98));
+  backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(102,126,234,0.3);
+  border-radius: 16px;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.4), 0 0 0 1px rgba(102,126,234,0.2);
+  padding: 12px;
+  z-index: 1000;
+  animation: dropdownSlide 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes dropdownSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.profile-info {
+  padding: 12px;
+  background: rgba(102,126,234,0.1);
+  border-radius: 12px;
+  margin-bottom: 8px;
+}
+
+.profile-email {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.profile-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+  margin: 8px 0;
+}
+
+.profile-menu-item {
+  width: 100%;
+  padding: 10px 12px;
+  background: transparent;
+  border: none;
+  border-radius: 10px;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.profile-menu-item:hover {
+  background: rgba(239,68,68,0.15);
+  color: #fca5a5;
+  transform: translateX(4px);
+}
+
+/* Enhanced Hero Background Animation - Wave Effect */
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: -100%;
+  background: 
+    linear-gradient(45deg, 
+      transparent 30%, 
+      rgba(102,126,234,0.15) 40%, 
+      rgba(240,147,251,0.15) 50%, 
+      rgba(79,172,254,0.15) 60%, 
+      transparent 70%
+    );
+  animation: waveMove 15s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes waveMove {
+  0%, 100% { 
+    transform: translateX(-50%) translateY(-50%) rotate(0deg);
+  }
+  50% { 
+    transform: translateX(50%) translateY(50%) rotate(180deg);
+  }
+}
+
+/* Floating orbs effect */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(102,126,234,0.25) 0%, transparent 30%),
+    radial-gradient(circle at 80% 70%, rgba(240,147,251,0.2) 0%, transparent 35%),
+    radial-gradient(circle at 50% 50%, rgba(79,172,254,0.15) 0%, transparent 25%),
+    radial-gradient(circle at 70% 20%, rgba(102,126,234,0.18) 0%, transparent 28%),
+    radial-gradient(circle at 30% 80%, rgba(240,147,251,0.22) 0%, transparent 32%);
+  background-size: 300% 300%;
+  animation: orbsFloat 25s ease-in-out infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes orbsFloat {
+  0%, 100% { 
+    background-position: 0% 0%, 100% 100%, 50% 50%, 80% 20%, 20% 80%;
+    opacity: 1;
+  }
+  25% { 
+    background-position: 30% 20%, 70% 80%, 60% 40%, 90% 30%, 10% 70%;
+    opacity: 0.8;
+  }
+  50% { 
+    background-position: 50% 50%, 50% 50%, 70% 30%, 60% 70%, 40% 60%;
+    opacity: 0.9;
+  }
+  75% { 
+    background-position: 70% 80%, 30% 20%, 40% 60%, 20% 80%, 80% 40%;
+    opacity: 0.85;
+  }
+}
+
+/* Ensure content stays above animations */
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Enhanced searchbar glow */
+.searchbar {
+  position: relative;
+}
+
+.searchbar::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(135deg, rgba(102,126,234,0.5), rgba(240,147,251,0.5));
+  border-radius: 999px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  filter: blur(8px);
+}
+
+.searchbar:focus-within::before {
+  opacity: 0.6;
+  animation: searchGlow 2s ease-in-out infinite;
+}
+
+@keyframes searchGlow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 0.8; }
+}
+
+/* Enhanced Logo */
+.brand {
+  font-size: 32px !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.06em !important;
+  margin-right: 32px !important;
+  transform: translateX(8px);
+  transition: all 0.3s ease !important;
+}
+
+.brand:hover {
+  transform: translateX(8px) scale(1.08) !important;
+}
