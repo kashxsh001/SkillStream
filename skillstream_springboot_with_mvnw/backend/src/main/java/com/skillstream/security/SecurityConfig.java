@@ -1,9 +1,4 @@
-echo "node_modules/" >> .gitignore
-git rm -r --cached node_modules
-git rm -r --cached skillstream_springboot_with_mvnw/frontend/node_modules
-git commit -m "remove node_modules"
-git pushpackage com.skillstream.security;
-
+package com.skillstream.security;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
